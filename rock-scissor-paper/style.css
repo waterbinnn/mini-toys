@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+* {
+    font-family: 'Poppins', sans-serif;
+
+}
+
 body {
     height: 100vh;
 }
@@ -36,8 +41,8 @@ body {
 }
 
 .weapons button {
-    background-color: #ffd51b;
-    color: #000000;
+    background-color: #fffd72;
+    color: #1d1d1d;
     border: none;
     font-size: 50px;
     height: 100px;
@@ -47,6 +52,11 @@ body {
     cursor: pointer;
 }
 
+.weapons button i {
+    pointer-events: none;
+
+}
+
 .details {
     margin-top: 30px;
     text-align: center;
@@ -54,7 +64,6 @@ body {
 
 .scores,
 .details {
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 15px;
 }
@@ -75,4 +84,20 @@ body {
 
 span {
     font-weight: 600;
+}
+
+.reset button {
+    display: none;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(238, 238, 238);
+    color: rgb(255, 81, 81);
+    cursor: pointer;
+}
+
+.reset button p {
+    font-weight: 500;
+    pointer-events: none;
 }
