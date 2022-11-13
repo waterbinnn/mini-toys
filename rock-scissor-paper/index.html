@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor Game</title>
-    <!--Fontawesome-->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <!--Google Font-->
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!--Stylesheet-->
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,13 +27,13 @@
             </p>
         </div>
         <div class="weapons">
-            <button type="button">
+            <button type="button" id="user_rock">
                 <i class="far fa-hand-rock"></i>
             </button>
-            <button type="button">
+            <button type="button" id="user_paper">
                 <i class="far fa-hand-paper"></i>
             </button>
-            <button type="button">
+            <button type="button" id="user_scissor">
                 <i class="far fa-hand-scissors"></i>
             </button>
         </div>
@@ -41,6 +41,11 @@
             <p id="user_choice"></p>
             <p id="comp_choice"></p>
             <p id="result"></p>
+        </div>
+        <div class="reset">
+            <button type="button" id="reset_btn">
+                <p>Restart</p>
+            </button>
         </div>
     </div>
 
