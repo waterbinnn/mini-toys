@@ -1,11 +1,12 @@
 import { ResultsInterface } from '../../shared/types';
 
-export function getResult(): ResultsInterface | null {
+export function getResultStorage(): ResultsInterface | any {
   const results = localStorage.getItem('results');
+
   return results ? JSON.parse(results) : null;
 }
 
-export function setResult(result: ResultsInterface): void {
+export function setResultStorage(result: Array<string | number>): void {
   localStorage.setItem('results', JSON.stringify(result));
 }
 
