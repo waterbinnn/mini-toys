@@ -30,8 +30,8 @@ let choices_object = {
 };
 
 function checker(input) {
-  var choices = ['rock', 'paper', 'scissor'];
-  var num = Math.floor(Math.random() * 3);
+  let choices = ['rock', 'paper', 'scissor'];
+  let num = Math.floor(Math.random() * 3);
 
   computer.innerHTML = ` Computer choose <span> ${choices[
     num
