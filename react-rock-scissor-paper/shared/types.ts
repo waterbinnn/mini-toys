@@ -1,7 +1,6 @@
 export interface ResultsInterface {
   [key: string]: Array<string | number>;
 }
-
 export interface BattleType {
   computerChoice: string;
   result: string;
