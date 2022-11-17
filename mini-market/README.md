@@ -4,7 +4,7 @@ Stack : React.js, Redux, Sementic UI <br>
 Description : fake api를 활용하여 미니 마켓 웹페이지 제작
 <br>
 <br>
-<img width="350px" src="https://user-images.githubusercontent.com/96714788/202423534-104b757d-b96b-4605-ae8b-605ddd6828d4.gif">
+<img src="https://user-images.githubusercontent.com/96714788/202423534-104b757d-b96b-4605-ae8b-605ddd6828d4.gif">
 
 ## NOTE
 
@@ -26,7 +26,7 @@ mini-market
  ┃ ┣ 📂 constants
  ┃ ┃ ┗ acrtion-types.js
  ┃ ┣ 📂 reducers
- ┃ ┃ ┣index.js
+ ┃ ┃ ┣ index.js
  ┃ ┃ ┗ productReducer.js
  ┃ ┗ store.js
  ┣ App.jsx
