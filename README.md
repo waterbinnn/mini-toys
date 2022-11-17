@@ -25,3 +25,11 @@ Description : 리덕스 공부 입문 - 카운터 구현
 <br>
 <br>
 <img width="350px" src="https://user-images.githubusercontent.com/96714788/202363548-ccaa93e2-1078-432f-972e-aa56008b2de2.gif">
+
+## Mini Market using Redux
+
+Stack : React.js, Redux, Sementic UI <br>
+Description : fake api를 활용하여 미니 마켓 웹페이지 제작
+<br>
+<br>
+<img width="350px" src="https://user-images.githubusercontent.com/96714788/202423534-104b757d-b96b-4605-ae8b-605ddd6828d4.gif">
