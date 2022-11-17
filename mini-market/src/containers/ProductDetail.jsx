@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { selectedProduct } from '../redux/actions/productAction';
+import {
+  selectedProduct,
+  removeSelectedProduct,
+} from '../redux/actions/productAction';
 import { useSelector } from 'react-redux';
 
 export const ProductDetail = () => {
@@ -27,16 +30,18 @@ export const ProductDetail = () => {
     if (productId && productId !== '') {
       fetchProductDetail();
     }
+    return () => {
+      dispatch(removeSelectedProduct());
+    };
   }, []);
 
   return (
     <div className="ui grid container" style={styles.wrapper}>
       {Object.keys(product).length === 0 ? (
-        <div>Loading...</div>
+        <div style={styles.loading}>Loading...</div>
       ) : (
         <div className="ui segment" style={styles.contianer}>
           <div className="ui two column stackable center aligned grid">
-            <div className="ui vertical divider">&</div>
             <div className="middle aligned row">
               <div className="column lp">
                 <img
@@ -72,6 +77,7 @@ const styles = {
     width: '100%',
     marginTop: 100,
     padding: 40,
+    borderRadius: 8,
   },
   image: {
     width: 'auto',
@@ -81,5 +87,9 @@ const styles = {
   },
   rp: {
     padding: 30,
+  },
+  loading: {
+    marginTop: 100,
+    fontSize: 30,
   },
 };
