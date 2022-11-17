@@ -25,8 +25,17 @@ export const ProductListing = () => {
 
   console.log(products);
   return (
-    <div className="ui container four column equal height grid">
+    <div
+      className="ui container four column equal height grid"
+      style={styles.container}
+    >
       <ProductComponent />
     </div>
   );
+};
+
+const styles = {
+  container: {
+    marginTop: 50,
+  },
 };
