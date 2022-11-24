@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Translate App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Stack : React.js <br>
+Description : Google, libretranslate Api를 사용하여 번역기 만들기
+<br>
+<br>
 
-## Available Scripts
+[Trouble Shooting]
 
-In the project directory, you can run:
+Google Api는 언어명을 불러오지 않음
+-> 다른 API 사용
+-> translate 할 땐 구글 API 사용해보고자 했는데
 
-### `npm start`
+구글에서 제공하는 Code Snippets 을 보면 target 과 source 가 'es', 'en'과 같이 줄임말이 들어가야함.
+즉 실제로 들어갈 input, output 은 'English' (data name) 가 아닌 'en' (data code)가 들어가야함
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```jsx
+const encodedParams = new URLSearchParams();
+encodedParams.append('q', 'Hello, world!');
+encodedParams.append('target', 'es');
+encodedParams.append('source', 'en');
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+const options = {
+  method: 'POST',
+  url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
+  headers: {
+    'content-type': 'application/x-www-form-urlencoded',
+    'Accept-Encoding': 'application/gzip',
+    'X-RapidAPI-Key': '732dced0demsh38aeb5aaede106ap104399jsn713837b502d8',
+    'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com',
+  },
+  data: encodedParams,
+};
+```
 
-### `npm test`
+[해결]
+inputLanguage 와 outputLanguage 는 languagesList 에서만 쓰이도록 하고 code 를 불러오도록 계획
+-> id 에 code를 넣어주자 ! 그리고 setInput, setOutput을 props로 받아서 모달에서 onClick 이벤트에 `setInput(e.target.id);` 를 해주고 바뀐 state를 target 과 source에 담아주어 해결!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```jsx
+//App.jsx
+encodedParams.append('q', textToTranslate);
+encodedParams.append('target', output);
+encodedParams.append('source', input);
+```
