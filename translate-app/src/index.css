@@ -87,7 +87,7 @@ input {
 }
 
 .search-bar input {
-    background: url(https://www.gstatic.com/images/icons/material/system/2x/search_grey600_24dp.png) right 8px center no-repeat;
+    background: url('https://www.gstatic.com/images/icons/material/system/2x/search_grey600_24dp.png') right 8px center no-repeat;
     background-size: 24px 24px;
     padding-left: 16px;
     padding-right: 40px;
@@ -99,12 +99,17 @@ input {
     width: 30px;
     height: 30px;
     padding: 6px;
+    margin-left: 10px;
     fill: #5a5a5d;
+    cursor: pointer;
+}
+
+.search-bar .close-button svg:hover {
+    opacity: 0.7;
 }
 
 .option-container {
     overflow: auto;
-    height: 200px;
 }
 
 .option-list ul {
@@ -151,6 +156,7 @@ input {
     color: #8ab4f8;
     padding: 5px 15px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .select-dropdown .down-arrow svg {
@@ -160,19 +166,26 @@ input {
     width: 26px;
     height: 26px;
     fill: #8ab4f8;
+    cursor: pointer;
 }
 
 .input .delete {
+    display: block;
     position: relative;
-    left: 269px;
-    top: -198px;
-    font-size: 50px;
+    top: -221px;
+    left: 252px;
+    font-size: 40px;
     color: #bdc1c6;
+    cursor: pointer;
+    margin: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .button-container {
-    position: absolute;
-    bottom: 30vh;
+    position: relative;
+    left: -655px;
+    top: 300px;
     color: #c5c5c5;
     padding: 18px;
     height: 20px;
