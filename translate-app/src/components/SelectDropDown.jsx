@@ -3,7 +3,7 @@ import React from 'react';
 const SelectDropDown = ({ style, setShowModal, selectedLanguage }) => {
   return (
     <div className="select-dropdown" onClick={() => setShowModal(style)}>
-      <input value={selectedLanguage} />
+      <input value={selectedLanguage} readOnly />
       <div className="down-arrow">
         <svg
           focusable="false"
